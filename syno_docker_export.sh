@@ -35,7 +35,7 @@ if [[ ! -d "${DockerShare}" ]]; then
     echo "docker shared folder not found!"
     exit 1
 else
-    ExportDir="${DockerShare}/app_mover_exports"
+    ExportDir="${DockerShare}/docker_exports"
 fi
 
 [ ! -d "${ExportDir}" ] && mkdir -p "${ExportDir}"
