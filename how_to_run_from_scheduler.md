@@ -25,7 +25,7 @@ To run a script from Task Scheduler follow these steps:
 <p align="center"><img src="images/schedule-2.png"></p>
 
 <p align="center">Step 3</p>
-<p align="center"><img src="images/schedule-3.png"></p>
+<p align="center"><img src="images/schedule-32.png"></p>
 
 <p align="center">Step 4</p>
-<p align="center"><img src="images/schedule-4.png"></p>
+<p align="center"><img src="images/schedule-42.png"></p>
