@@ -6,6 +6,7 @@
 - [Synology recovery](#synology-recovery)
 - [Other Synology scripts](#other-synology-scripts)
 - [Synology hardware restrictions](#synology-hardware-restrictions)
+- [How To Guides](#how-to-guides)
 - [Synology dev](#synology-dev)
 ##
 
@@ -119,6 +120,13 @@
 
 - **<a href="https://github.com/007revad/Synology_Information_Wiki">Synology_Information_Wiki</a>**
   - Information about Synology hardware.
+
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Back to Contents](#contents)
+
+### How To Guides
+
+- **<a href="https://github.com/007revad/Synology_SSH_key_setup">Synology_SSH_key_setup</a>**
+  - How to setup SSH key authentication for your Synology.
 
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Back to Contents](#contents)
 
