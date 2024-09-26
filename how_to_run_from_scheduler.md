@@ -11,7 +11,7 @@ To run a script from Task Scheduler follow these steps:
 5. Untick **Enable** so it does **not** run on a schedule.
 6. Click **Task Settings**.
 7. In the box under **User-defined script** type the path to the script. 
-    - e.g. If you saved the script to a shared folder on volume 1 called "scripts" you'd type: **/volume1/scripts/videostation_for_722.sh**
+    - e.g. If you saved the script to a shared folder on volume 1 called "scripts" you'd type: **/volume1/scripts/syno_docker-export.sh**
 8. Click **OK** to save the settings.
 9. Click on the task - but **don't** enable it - then click **Run**.
 10. Once the script has run you can delete the task, or keep in case you need it again.
