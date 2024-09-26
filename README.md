@@ -8,7 +8,9 @@
 
 ### Description
 
-Export Synology Container Manager or Docker containers' settings as json files
+Export Synology Container Manager or Docker containers' settings as json files to your docker shared folder
+
+Works with DSM 7's Container Manager and DSM 6's Docker.
 
 ### Download the script
 
