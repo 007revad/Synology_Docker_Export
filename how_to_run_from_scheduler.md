@@ -19,7 +19,7 @@ To run a script from Task Scheduler follow these steps:
 **Here's some screenshots showing what needs to be set:**
 
 <p align="center">Step 1</p>
-<p align="center"><img src="images/schedule-1.png"></p>
+<p align="center"><img src="images/schedule-1a.png"></p>
 
 <p align="center">Step 2</p>
 <p align="center"><img src="images/schedule-2a.png"></p>
