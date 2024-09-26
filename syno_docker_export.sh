@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #-----------------------------------------------------------------------------------
 # Shamelessly borrowed from ctrlaltdelete
 # https://www.synology-forum.de/threads/docker-container-backup.134937/post-1186059
@@ -24,6 +24,37 @@ script=Synology_Docker_Export
 repo="007revad/Synology_Docker_Export"
 scriptname=syno_docker_export
 
+ding(){ 
+    printf \\a
+}
+
+# Check script is running as root
+if [[ $( whoami ) != "root" ]]; then
+    ding
+    echo -e "${Error}ERROR${Off} This script must be run as sudo or root!"
+    exit 1  # Not running as sudo or root
+fi
+
+# Get NAS model
+model=$(cat /proc/sys/kernel/syno_hw_version)
+#modelname="$model"
+
+# Show script version
+#echo -e "$script $scriptver\ngithub.com/$repo\n"
+echo "$script $scriptver"
+
+# Get DSM full version
+productversion=$(/usr/syno/bin/synogetkeyvalue /etc.defaults/VERSION productversion)
+buildphase=$(/usr/syno/bin/synogetkeyvalue /etc.defaults/VERSION buildphase)
+buildnumber=$(/usr/syno/bin/synogetkeyvalue /etc.defaults/VERSION buildnumber)
+smallfixnumber=$(/usr/syno/bin/synogetkeyvalue /etc.defaults/VERSION smallfixnumber)
+
+# Show DSM full version and model
+if [[ $buildphase == GM ]]; then buildphase=""; fi
+if [[ $smallfixnumber -gt "0" ]]; then smallfix="-$smallfixnumber"; fi
+echo "$model DSM $productversion-$buildnumber$smallfix $buildphase"
+
+
 #ExportDate="$(date +%Y-%m-%d_%H-%M)"
 ExportDate="$(date +%Y%m%d_%H%M)"
 
@@ -32,7 +63,8 @@ ExportDate="$(date +%Y%m%d_%H%M)"
 DockerShare="$(synoshare --get-real-path docker)"
 
 if [[ ! -d "${DockerShare}" ]]; then
-    echo "docker shared folder not found!"
+    ding
+    echo -e "\nERROR docker shared folder not found!\n"
     exit 1
 else
     ExportDir="${DockerShare}/docker_exports"
@@ -40,7 +72,7 @@ fi
 
 [ ! -d "${ExportDir}" ] && mkdir -p "${ExportDir}"
 
-echo "Exporting container settings to ${ExportDir}"
+echo -e "\nExporting container settings to ${ExportDir}\n"
 # Get list of all containers (running and stopped)
 for container in $(docker ps --all --format "{{ .Names }}"); do
     if grep -q "$container" <<< "${IgnoredContainers[@]}" ; then
@@ -67,6 +99,8 @@ for container in $(docker ps --all --format "{{ .Names }}"); do
         fi
     fi
 done
+
+echo -e "\nFinished\n"
 
 exit
 
