@@ -62,10 +62,10 @@ If the script won't run check the following:
 
 ### Screenshots
 
-<p align="center">Description of image 1 goes here</p>
-<p align="center"><img src="/images/IMAGE_NAME.png"></p>
+<!--- <p align="center">Description of image 1 goes here</p> /> --->
+<p align="center"><img src="/images/script.png"></p>
 
 <br>
 
-<p align="center">Description of image 2 goes here</p>
-<p align="center"><img src="/images/IMAGE_NAME.png"></p>
+<!--- <p align="center">Description of image 2 goes here</p> --->
+<p align="center"><img src="/images/exports.png"></p>
