@@ -8,13 +8,26 @@
 
 ### Description
 
-Description goes here
+Export Synology Container Manager or Docker containers' settings as json files
 
 ### Download the script
 
 1. Download the latest version _Source code (zip)_ from https://github.com/007revad/Synology_Docker_Export/releases
 2. Save the download zip file to a folder on the Synology.
 3. Unzip the zip file.
+
+### Options
+
+There are 2 options you can set in the script:
+```
+# Delete json exports older than X days
+DeleteOlder=7
+
+# Specify containers to ignore if you don't want to export their settings
+# For example:
+# IgnoredContainers=(jitsi_jicofo jitsi_jvb jitsi_prosody jitsi_web synology_docviewer_2)
+IgnoredContainers=
+```
 
 ### To run the script via task scheduler
 
