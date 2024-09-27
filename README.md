@@ -76,3 +76,20 @@ If the script won't run check the following:
 
 <!--- <p align="center">Description of image 2 goes here</p> --->
 <p align="center"><img src="/images/exports.png"></p>
+
+### Importing
+
+Importing the exported json files in Synology's Container Manager ui or Docker ui
+
+<!--- <p align="center">Description of image 1 goes here</p> /> --->
+<p align="center"><img src="/images/import-1.png"></p>
+
+<br>
+
+<!--- <p align="center">Description of image 2 goes here</p> --->
+<p align="center"><img src="/images/import-2.png"></p>
+
+<br>
+
+<!--- <p align="center">Description of image 2 goes here</p> --->
+<p align="center"><img src="/images/import-3.png"></p>
