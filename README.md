@@ -17,7 +17,7 @@ Export all Synology Container Manager or Docker containers' settings as json fil
 
 The exported json files can later be imported in Synology's Container Manager ui or Docker ui.
 
-The advantage of the exported json files is they are truly portable as each container's mapped volumes are **not** hard coded to a specific volume.
+The advantage of the exported json files is they are truly portable as each container's mapped volumes are **not** hard coded to a specific volume. DSM knows what volume each shared folder is located on.
 
 ### Download the script
 
