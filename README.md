@@ -93,3 +93,7 @@ Importing the exported json files in Synology's Container Manager ui or Docker u
 
 <!--- <p align="center">Description of image 2 goes here</p> --->
 <p align="center"><img src="/images/import-3.png"></p>
+
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Back to Description](#description)
+
+<br>
