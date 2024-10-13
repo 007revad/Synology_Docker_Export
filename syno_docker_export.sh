@@ -19,7 +19,7 @@ IgnoredContainers=
 
 #-----------------------------------------------------------------------------------
 
-scriptver="v1.0.0"
+scriptver="v1.0.1"
 script=Synology_Docker_Export
 repo="007revad/Synology_Docker_Export"
 scriptname=syno_docker_export
@@ -59,8 +59,15 @@ echo "$model DSM $productversion-$buildnumber$smallfix $buildphase"
 ExportDate="$(date +%Y%m%d_%H%M)"
 
 # Get docker share location
-# synoshare --get-real-path is case insensitive (docker or Docker both work)
-DockerShare="$(synoshare --get-real-path docker)"
+# DSM 7.2.1 synoshare --get-real-path and older DSM synoshare --getmap docker
+# are case insensitive (docker or Docker both work)
+if [[ $buildnumber -gt "64570" ]]; then
+    # DSM 7.2.1 and later
+    DockerShare=$(synoshare --get-real-path docker)
+else
+    # DSM 7.2 and earlier
+    DockerShare=$(synoshare --getmap docker | grep volume | cut -d"[" -f2 | cut -d"]" -f1)
+fi
 
 if [[ ! -d "${DockerShare}" ]]; then
     ding
