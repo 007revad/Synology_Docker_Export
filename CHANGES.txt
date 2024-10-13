@@ -1,2 +1,5 @@
+v1.0.1
+- Bug fix for DSM 7.2 and older not finding docker shared folder. Issue #6
+
 v1.0.0
   - First release.
