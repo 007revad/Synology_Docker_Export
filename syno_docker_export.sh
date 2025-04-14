@@ -19,7 +19,7 @@ IgnoredContainers=
 
 #-----------------------------------------------------------------------------------
 
-scriptver="v1.0.1"
+scriptver="v1.0.2"
 script=Synology_Docker_Export
 repo="007revad/Synology_Docker_Export"
 scriptname=syno_docker_export
@@ -102,7 +102,7 @@ for container in $(docker ps --all --format "{{ .Names }}"); do
 
         # Delete backups older than $DeleteOlder days
         if [[ $DeleteOlder =~ ^[2-9][0-9]?$ ]]; then
-            find "$ExportDir" -name "${container,,}_*.json" -mtime +"$DeleteOlder" -exec rm {} \;
+            find "$ExportDir" -name "${container}_*.json" -mtime +"$DeleteOlder" -exec rm {} \;
         fi
     fi
 done
