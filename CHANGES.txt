@@ -1,5 +1,5 @@
 v1.04
-- Changed to show "Deleting files older than current YYYYMMDD_HHmm plus N days" if DeleteOlder set to greater than 0.
+- Changed to show "Deleting exports older than current YYYYMMDD_HHmm plus N days" if DeleteOlder set to greater than 0.
 
 v1.0.3
 - Changed to print "Deleting <filename>" when the script deletes old exports.
