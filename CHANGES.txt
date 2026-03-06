@@ -1,3 +1,10 @@
+v1.04
+- Changed to show "Deleting exports older than current YYYYMMDD_HHmm plus N days" if DeleteOlder set to greater than 0.
+
+v1.0.3
+- Changed to print "Deleting <filename>" when the script deletes old exports.
+- Bug fix for not deleting old exports.
+
 v1.0.2
 - Bug fix for '"bad substitution" error in checking age of files`. Issue #8
 

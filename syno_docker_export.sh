@@ -19,9 +19,11 @@ IgnoredContainers=
 
 #-----------------------------------------------------------------------------------
 
-scriptver="v1.0.2"
+scriptver="v1.0.4"
 script=Synology_Docker_Export
+# shellcheck disable=SC2034
 repo="007revad/Synology_Docker_Export"
+# shellcheck disable=SC2034
 scriptname=syno_docker_export
 
 ding(){ 
@@ -31,7 +33,7 @@ ding(){
 # Check script is running as root
 if [[ $( whoami ) != "root" ]]; then
     ding
-    echo -e "${Error}ERROR${Off} This script must be run as sudo or root!"
+    echo "ERROR This script must be run as sudo or root!"
     exit 1  # Not running as sudo or root
 fi
 
@@ -54,9 +56,12 @@ if [[ $buildphase == GM ]]; then buildphase=""; fi
 if [[ $smallfixnumber -gt "0" ]]; then smallfix="-$smallfixnumber"; fi
 echo "$model DSM $productversion-$buildnumber$smallfix $buildphase"
 
-
 #ExportDate="$(date +%Y-%m-%d_%H-%M)"
 ExportDate="$(date +%Y%m%d_%H%M)"
+
+if [[ $DeleteOlder -gt "0" ]]; then
+    echo "Deleting exports older than $ExportDate plus $DeleteOlder days"
+fi
 
 # Get docker share location
 # DSM 7.2.1 synoshare --get-real-path and older DSM synoshare --getmap docker
@@ -101,8 +106,8 @@ for container in $(docker ps --all --format "{{ .Names }}"); do
         fi
 
         # Delete backups older than $DeleteOlder days
-        if [[ $DeleteOlder =~ ^[2-9][0-9]?$ ]]; then
-            find "$ExportDir" -name "${container}_*.json" -mtime +"$DeleteOlder" -exec rm {} \;
+        if [[ $DeleteOlder -ge "1" ]]; then
+            find  "$ExportDir" -name "${container}_"*.json -mtime +"$DeleteOlder" -exec sh -c 'echo "Deleting $(basename "{}")"; rm "{}"' \;
         fi
     fi
 done

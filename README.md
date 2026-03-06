@@ -69,8 +69,11 @@ If the script won't run check the following:
 
 ### Screenshots
 
-<!--- <p align="center">Description of image 1 goes here</p> /> --->
+<!--- <p align="center">Description of image 1 goes here</p> --->
 <p align="center"><img src="/images/script.png"></p>
+
+<p align="center">v1.0.4 Deleting old exports</p>
+<p align="center"><img src="/images/v104.png"></p>
 
 <br>
 
